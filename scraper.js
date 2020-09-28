@@ -6,6 +6,7 @@ const request = require('request-promise');
 
 const translations = require('./translations');
 const mapFields = require('./mapFields');
+const sortedFields = require('./sorted_fields');
 
 const adaptedTranslations = {};
 for (const key of Object.keys(translations)) {
@@ -88,7 +89,19 @@ async function getDataForBrandingCompanyId(brandingCompanyId, fields) {
     }
   });
 
-  const opts = { fields };
+  let outputFields = [];
+  // Try sorting the fields:
+  for (const sortedField of sortedFields) {
+    const field = fields.find(s => (s.value === sortedField || s.label === sortedField));
+
+    if (field) {
+      outputFields.push(field);
+    }
+  }
+
+  console.log(`Had ${fields.length} initial fields. Now has ${outputFields.length} sorted fields.`);
+
+  const opts = { fields: outputFields };
   const transformOpts = { highWaterMark: 8192 };
 
   const output = createWriteStream('output.csv', { encoding: 'utf8' });
@@ -97,4 +110,6 @@ async function getDataForBrandingCompanyId(brandingCompanyId, fields) {
 
   parsingProcessor.input.push(JSON.stringify(data));
   parsingProcessor.input.push(null);
+
+  console.log('Data written to output.csv');
 })();

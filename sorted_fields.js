@@ -1,0 +1,5 @@
+'use strict';
+
+module.exports = [
+  'Name', 'Symbol', 'LegalName', 'Price Currency', 'Fund Size(Mil)', 'Average Market Cap(Mil)', 'Last Close Price', 'PERatio', 'Yield(%)', 'Dividend Yield (%)', 'MER', 'Total Expense Ratio', '3 Year Beta', '3 Year Alpha', '3 Year R-Squared', '3 Year Sharpe Ratio', '3 Year Standard Deviation', '1 Day Return(%)', '1 Week Return(%)', '1 Month Return(%)', '3 Months Return(%)', '6 Months Return(%)', 'YTD Return(%)', '1 Year Annualised(%)', '3 Years Annualised(%)', '5 Years Annualised(%)', '10 Years Annualised(%)', 'Morningstar Category', 'Average12MonthFossilFuelExposure', 'Fixed Income Style Boxâ„¢', 'Equity Style Boxâ„¢', 'Effective Duration', 'AverageCreditQualityCode', 'Morningstar Analyst Ratingâ„¢', 'Morningstar Ratingâ„¢', 'Morningstar Ratingâ„¢', 'Minimum Initial Purchase', 'Morningstar Risk (Rel to Category)', 'Ongoing Charge(%)', 'Morningstar Sustainability Ratingâ„¢', 'Manager Tenure(Yrs)', 'SecId', 'TenforeId', 'Ongoing Charge(%)', 'TrackRecordExtension', 'Deferred Fee(%)', 'Initial Charge(%)'
+];
