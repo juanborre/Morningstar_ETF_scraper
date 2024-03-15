@@ -4,8 +4,10 @@ Scrapes the website [Morningstar](https://www.morningstar.com/) and outputs a CS
 
 # How to run
 
-`npm i`
+Install [Node.JS](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
-`npm start`
+Then:
+- `npm i`
+- `npm start`
 
 You will find the output.csv file at the root of the project.
